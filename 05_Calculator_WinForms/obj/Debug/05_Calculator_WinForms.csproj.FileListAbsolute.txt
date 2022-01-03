@@ -1,0 +1,10 @@
+E:\C#\05_Calculator_WinForms\obj\Debug\05_Calculator_WinForms.csprojAssemblyReference.cache
+E:\C#\05_Calculator_WinForms\obj\Debug\_05_Calculator_WinForms.Properties.Resources.resources
+E:\C#\05_Calculator_WinForms\obj\Debug\05_Calculator_WinForms.csproj.GenerateResource.cache
+E:\C#\05_Calculator_WinForms\obj\Debug\05_Calculator_WinForms.csproj.CoreCompileInputs.cache
+E:\C#\05_Calculator_WinForms\bin\Debug\05_Calculator_WinForms.exe.config
+E:\C#\05_Calculator_WinForms\bin\Debug\05_Calculator_WinForms.exe
+E:\C#\05_Calculator_WinForms\bin\Debug\05_Calculator_WinForms.pdb
+E:\C#\05_Calculator_WinForms\obj\Debug\05_Calculator_WinForms.exe
+E:\C#\05_Calculator_WinForms\obj\Debug\05_Calculator_WinForms.pdb
+E:\C#\05_Calculator_WinForms\obj\Debug\_05_Calculator_WinForms.Form1.resources
