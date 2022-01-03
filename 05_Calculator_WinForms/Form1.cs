@@ -149,7 +149,7 @@ namespace _05_Calculator_WinForms
         private void button_egual_Click(object sender, EventArgs e)
         {
             second = userInput;             // После ввода + - * или / userInput был очищен
-                                            // Далее в него было введено с клавишь второе
+                                            // Далее в него было введено с клавиш второе
                                             // число. После нажатия = присваиваем userInput
                                             //  в second
             if (function == '+')
