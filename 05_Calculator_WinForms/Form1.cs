@@ -21,7 +21,7 @@ namespace _05_Calculator_WinForms
         {
             InitializeComponent();
         }
-        
+
         private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
         {
             
@@ -29,9 +29,9 @@ namespace _05_Calculator_WinForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CalculatorDisplay.Text = "";
-            userInput +=1;
-            CalculatorDisplay.Text =userInput;
+            CalculatorDisplay.Text = "";            // Очистка дисплея
+            userInput +=1;                          // В переменную userInput дописываем 1
+            CalculatorDisplay.Text =userInput;      // Выводим на дисплей userInput
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -106,12 +106,12 @@ namespace _05_Calculator_WinForms
 
         private void button_plus_Click(object sender, EventArgs e)
         {
-
-            first = userInput;
-            userInput = "";
-            function = '+';
-            CalculatorDisplay.Text = first;
-
+            first = userInput;              // В первое число присваиваем ввод с клавиш
+            userInput = "";                 // Очищаем переменную userInput
+            function = '+';                 
+            CalculatorDisplay.Text = first; // Выводим на дисплей первое число вместо 
+                                            // очищенного userInput ( на дисплее всё 
+                                            // останется так же)
         }
 
         private void button_minus_Click(object sender, EventArgs e)
@@ -141,14 +141,17 @@ namespace _05_Calculator_WinForms
 
         private void buttonC_Click(object sender, EventArgs e)
         {
-            userInput = "";
-            CalculatorDisplay.Text = "0";
+            userInput = "";                       // После нажатия С очищаем userInput
+                                                  // в нем находился результат операции
+            CalculatorDisplay.Text = "0";          
         }
 
         private void button_egual_Click(object sender, EventArgs e)
         {
-            second = userInput;
-
+            second = userInput;             // После ввода + - * или / userInput был очищен
+                                            // Далее в него было введено с клавишь второе
+                                            // число. После нажатия = присваиваем userInput
+                                            //  в second
             if (function == '+')
             {
                 result = double.Parse(first) + double.Parse(second);
@@ -172,8 +175,11 @@ namespace _05_Calculator_WinForms
                     result = double.Parse(first) / double.Parse(second);
                 }              
             }
-            CalculatorDisplay.Text = result.ToString();
-            userInput = result.ToString();
+            CalculatorDisplay.Text = result.ToString();     // Выводим результат
+            userInput = result.ToString();                  // Присваиваем в userInput
+                                                            // результат последнего 
+                                                 // вычисления, чтобы можно было сразу 
+                                                 // выполнять следующее действие
         }
     }
 }
