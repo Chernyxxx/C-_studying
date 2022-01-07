@@ -71,15 +71,47 @@ namespace _09_Homework_Arrays
 
         //
         //                      4  Изменить размер массива 
-        //
-        static void Resize(ref int [] arr, int newSize)
+        // Массив является классом - ссылочным типом данных , поэтому он по умолчанию передаётся
+        // в метод по ссылке. Но так как мы внутри метода создаём новый массив в куче, то необхо-
+        // димо изменить исходную ссылку, чтобы она ссылалась на новый массив. Ссылка переданная
+        // параметром в массив является копией исходной ссылки, и после выполнения метода уничтож-
+        // ается. Поэтому необходимо передавать ссылку на массив в метод по ссылке - с ключевым
+        // словом ref. В таком слуае исходная ссылка будет переподвязана к новому массиву.
+        // 
+        static void Resize(ref int[] arr, int newSize)
         {
-
+            int[] newArray = new int[newSize];
+            for(int i=0; i<arr.Length && i<newArray.Length; i++)
+            {
+                newArray[i] = arr[i];
+            }
+            arr = newArray;
         }
+
+        //
+        //                        5 Добавить новый эл-т в массив по индексу
+        //  Так же как и в предыдущем случае необходимо использование ключ слова ref т.к. внутри
+        //  метода создаётся новый массив и необходимо переподвязать исходную ссылку.
+
+        static void InsertByIndex(ref int[] array, int newData, int index)
+        {
+            int[] newArray = new int[array.Length+1];
+            for (int i = 0; i < index; i++)
+            {
+                newArray[i] = array[i];
+            }
+            newArray[index] = newData;
+            for (int i = index; i < array.Length; i++)
+            {
+                newArray[i+1] = array[i];
+            }
+            array = newArray;
+        }
+
         static void Main(string[] args)
         {
-            int[] arr = new[] {2,6,2,0,-8,9};
-
+            int[] arr = new[] {2,6,2};
+ 
 
             Console.WriteLine("\nМИНИМАЛЬНЫЙ ЭЛ-Т");
             int minElem = MinElem(arr);
@@ -94,6 +126,13 @@ namespace _09_Homework_Arrays
             Console.WriteLine("\nНАЙТИ ПО ЗНАЧЕНИЮ");
             int index1 = FindElem(arr, 6);
             Console.WriteLine(index1);
+
+            Console.WriteLine("\nИЗМЕНИТЬ РАЗМЕР МАССИВА");
+            Resize(ref arr, 2);
+
+            Console.WriteLine("\nВСТАВИТЬ ПО ИНДЕКСУ");
+            InsertByIndex(ref arr, 100, 0);
         }
+
     }
 }
