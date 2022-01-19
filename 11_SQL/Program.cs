@@ -22,25 +22,37 @@ namespace _11_SQL
         {
             //
             //              1. Создание базы данных
-            // 1 вариант. К проекту Добавить -> Создать элемент ->
+            //              
+            // 1 вариант
+            //
+            // К проекту Добавить -> Создать элемент ->
             // Базы данных основанные на службах.
-            // 2 вариант см. ниже
+            // 
+            // 2 вариант 
             //
-            // Подключаемся к MSSQLServer к базе данных master, которая
-            // по умолчанию предустановлена на любом сервере
-            //
+            // Сначала подключаемся к MSSQLServer к базе данных master, 
+            // которая по умолчанию предустановлена на любом сервере
 
+
+            /*
             SqlConnection connection = new SqlConnection("Server = (localdb)\\mssqllocaldb;Database = master;Trusted_Connection=True;");
             try
             {
                 connection.Open();
                 Console.WriteLine("Подключение к БД master");
-                //
-                // Создание новой базы данныз
-                //
+           //
+           // Создаём новоую базу данных
+           //
                 SqlCommand command = new SqlCommand("CREATE DATABASE Database2", connection);
                 command.ExecuteNonQuery();
-                Console.WriteLine("База данных Database2 создана");
+                Console.WriteLine("База данных Database2 создана"); 
+            //
+            // Файлы созданой таким образом БД находятся на С/Пользователи/User
+            // Требуется прикрепить их к проекту. Для этого скопировать их в папку
+            // проекта (возможно не обязательно), добавить в дерево
+            // и при выполнении команды вписывать новую строку подключения с
+            // параметром AttachDbFilename = E: ...
+
             }
             catch(SqlException ex)
             {
@@ -55,22 +67,16 @@ namespace _11_SQL
             }
             Console.WriteLine("Подключение закрыто");
             
-           /*
-
-            // Выполнение команды 
-            command.ExecuteNonQuery();
-
-            Console.WriteLine("База данных создана");
-
+           */
 
             // 
             //              2. Подключение к базе данных
             //              
             //              
 
-            string connectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = E:\\C#\\11_SQL\\Database1.mdf;Integrated Security=True";
-
-            using (SqlConnection connection1 = new SqlConnection(connectionString))
+            //string connectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = E:\\C#\\11_SQL\\Database1.mdf;Integrated Security=True";
+            string connectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = E:\\C#\\11_SQL\\Database2.mdf;Integrated Security=True";
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 // Подключение    
                 connection.Open();
@@ -85,12 +91,10 @@ namespace _11_SQL
                 Console.WriteLine($"Версия сервера \t { connection.ServerVersion}");
                 Console.WriteLine($"Состояние \t { connection.State}");
                 Console.WriteLine($"Сервер WorkstationId \t { connection.WorkstationId}");
-
+              
                 //
                 //      3. Команды, создание таблицы
                 // 
-
-                
 
                 SqlCommand command1 = new SqlCommand();
                 command1.CommandText = "CREATE TABLE Staff(Id INT PRIMARY KEY IDENTITY, LOGIN NVARCHAR(32) NOT NULL, PASSWORD NVARCHAR(32) NOT NULL)";
@@ -100,10 +104,10 @@ namespace _11_SQL
                 command1.ExecuteNonQuery();
 
                 Console.WriteLine("Таблица создана");
-
+                
             }
 
-         */
+         
             
         }
     }
