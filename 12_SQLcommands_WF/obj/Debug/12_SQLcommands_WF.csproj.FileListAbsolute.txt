@@ -1,0 +1,12 @@
+E:\C#\12_SQLcommands_WF\bin\Debug\Database1.mdf
+E:\C#\12_SQLcommands_WF\bin\Debug\Database1_log.ldf
+E:\C#\12_SQLcommands_WF\bin\Debug\12_SQLcommands_WF.exe.config
+E:\C#\12_SQLcommands_WF\bin\Debug\12_SQLcommands_WF.exe
+E:\C#\12_SQLcommands_WF\bin\Debug\12_SQLcommands_WF.pdb
+E:\C#\12_SQLcommands_WF\obj\Debug\12_SQLcommands_WF.csprojAssemblyReference.cache
+E:\C#\12_SQLcommands_WF\obj\Debug\_12_SQLcommands_WF.Form1.resources
+E:\C#\12_SQLcommands_WF\obj\Debug\_12_SQLcommands_WF.Properties.Resources.resources
+E:\C#\12_SQLcommands_WF\obj\Debug\12_SQLcommands_WF.csproj.GenerateResource.cache
+E:\C#\12_SQLcommands_WF\obj\Debug\12_SQLcommands_WF.csproj.CoreCompileInputs.cache
+E:\C#\12_SQLcommands_WF\obj\Debug\12_SQLcommands_WF.exe
+E:\C#\12_SQLcommands_WF\obj\Debug\12_SQLcommands_WF.pdb
