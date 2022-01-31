@@ -28,20 +28,23 @@ namespace _12_SQLcommands_WF
 
         private void checkBox_insert_CheckedChanged(object sender, EventArgs e)
         {
-            checkBox_delete.Checked = false;
-            checkBox_update.Checked = false;
-            checkBox_search.Checked = false;
+            if (checkBox_insert.Checked == true)
+            {
+                checkBox_delete.Checked = false;
+                checkBox_update.Checked = false;
+                checkBox_search.Checked = false;
 
-            insert_butt.Enabled = true;
-            delete_butt.Enabled = false;
-            update_butt.Enabled = false;
-            search_butt.Enabled = false;
+                insert_butt.Enabled = true;
+                delete_butt.Enabled = false;
+                update_butt.Enabled = false;
+                search_butt.Enabled = false;
 
-            id_textBox.Enabled = false;
-            login_textBox.Enabled = true;
-            password_textBox.Enabled = true;
-            fName_textBox.Enabled = true;
-            lName_textBox.Enabled = true;
+                id_textBox.Enabled = false;
+                login_textBox.Enabled = true;
+                password_textBox.Enabled = true;
+                fName_textBox.Enabled = true;
+                lName_textBox.Enabled = true;
+            }                   
         }
         private void checkBox_delete_CheckedChanged(object sender, EventArgs e)
         {
@@ -208,7 +211,7 @@ namespace _12_SQLcommands_WF
             lName_textBox.Text = "";
         }
         //
-        //              Кнопка SEARCH - обновить по любым данным
+        //              Кнопка SEARCH - искать по любым данным
         //
         private void search_butt_Click(object sender, EventArgs e)
         {
